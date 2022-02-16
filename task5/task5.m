@@ -105,57 +105,15 @@ colormap jet
 colorbar
 
 %------------------------------------------------------------------
-%converse the image from the disparity map to the orginal style.
-
-tform1i = tform1;
-tform2i = tform2;
-tform1i.T= inv(tform1.T);
-tform2i.T= inv(tform2.T);
-
-disparityRange=[0 0.25*35*50];
-
-I1Disp = imwarp(disparityMap,tform1i,'OutputView',imref2d(size(disparityMap)));
-I2Disp = imwarp(disparityMap,tform2i,'OutputView',imref2d(size(disparityMap)));
+%converse the image from the disparity map to the unscaled map.
 
 
-IDSP = (1./disparityMap)*35*50;
-I1Disp = 1./I1Disp;
-I2Disp = 1./I2Disp;
+disparityRange=[0 0.25];
 
 
-figure; 
-hold on;
-subplot(121);
-imshow(I1Disp, disparityRange); 
-title('Depth map of image 1'); 
-colormap jet
-colorbar
 
-hold on;
-subplot(122); 
-imshow(I2Disp, disparityRange);
-title('Depth map of image 2'); 
-colormap jet
-colorbar
-hold on;
+IDSP = (1./disparityMap);
 
-figure;
-hold on;
-subplot(121);
-imshow(disparityMap,[0 24]);
-title("Disparity map");
-colormap jet
-colorbar
-
-
-hold on;
-subplot(122);
-imshow(IDSP,disparityRange);
-title("Depth map");
-colormap jet
-colorbar
-
-truesize;
 
 figure;
 hold on;
