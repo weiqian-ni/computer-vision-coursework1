@@ -63,6 +63,10 @@ truesize;
 %uk.mathworks.com. (n.d.). Display corresponding feature points - MATLAB showMatchedFeatures 
 %- MathWorks United Kingdom. [online] 
 %Available at: https://uk.mathworks.com/help/vision/ref/showmatchedfeatures.html [Accessed 21 Feb. 2022].
+
+% uk.mathworks.com. (n.d.). Compute epipolar lines for stereo images 
+% - MATLAB epipolarLine - MathWorks United Kingdom. [online] 
+% Available at: https://uk.mathworks.com/help/vision/ref/epipolarline.html.
 %------------------------------------------------------------------
 %rectification
 [t1,t2] = estimateUncalibratedRectification(fLMedS, ...
