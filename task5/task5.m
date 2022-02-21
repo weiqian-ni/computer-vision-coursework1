@@ -60,6 +60,9 @@ line(points(:,[1,3])',points(:,[2,4])');
 
 truesize;
 
+%uk.mathworks.com. (n.d.). Display corresponding feature points - MATLAB showMatchedFeatures 
+%- MathWorks United Kingdom. [online] 
+%Available at: https://uk.mathworks.com/help/vision/ref/showmatchedfeatures.html [Accessed 21 Feb. 2022].
 %------------------------------------------------------------------
 %rectification
 [t1,t2] = estimateUncalibratedRectification(fLMedS, ...
@@ -92,6 +95,10 @@ yline(pts2Rect(inliers,2),'-','color','r')
 
 
 truesize;
+
+%uk.mathworks.com. (n.d.). Uncalibrated Stereo Image Rectification 
+%- MATLAB & Simulink - MathWorks United Kingdom. [online] 
+%Available at: https://uk.mathworks.com/help/vision/ug/uncalibrated-stereo-image-rectification.html [Accessed 16 Feb. 2022]
 %--------------------------------------------------------------
 %disparity map calculation
 
@@ -104,15 +111,18 @@ title('Disparity Map');
 colormap jet
 colorbar
 
+%uk.mathworks.com. (n.d.). Compute disparity map using block matching 
+%- MATLAB disparityBM - MathWorks United Kingdom. [online] 
+%Available at: https://uk.mathworks.com/help/vision/ref/disparitybm.html [Accessed 16 Feb. 2022].
 %------------------------------------------------------------------
 %converse the image from the disparity map to the unscaled map.
 
 
-disparityRange=[0 0.25];
+disparityRange=[0 0.25*2935.45*0.01];
 
 
 
-IDSP = (1./disparityMap);
+IDSP = (1./disparityMap)*2935.45*0.01;
 
 
 figure;
@@ -124,7 +134,7 @@ colorbar
 
 truesize;
 
-
+ 
 %------------------------------------------------------------------
 
 
